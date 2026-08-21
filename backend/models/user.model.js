@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Name is required"],
       trim: true,
-      minlength: [2, "Name must contain at least 2 characters"],
+      minlength: [5, "Name must contain at least 2 characters"],
       maxlength: [50, "Name cannot exceed 50 characters"]
     },
 
@@ -23,7 +23,9 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Phone number is required"],
       unique: true,
-      trim: true
+      trim: true,
+      maxlength: [10, "Number cannot exceed 10 characters"],
+minlength: [10, "Number must contain at least 2 characters"],
     },
 
     passwordHash: {
